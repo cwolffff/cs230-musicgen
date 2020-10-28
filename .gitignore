@@ -1,0 +1,7 @@
+*.egg-info/
+.DS_Store
+.vscode/
+.ipynb_checkpoints/
+__pycache__/
+data/nesmdb_midi/
+data/nesmdb24_seprsco/
