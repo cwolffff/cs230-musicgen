@@ -1,8 +1,3 @@
-"""
-Original author: Chris Donahue
-Source: https://github.com/chrisdonahue/LakhNES/blob/master/data/tx1_midi.py
-"""
-
 import os
 from collections import defaultdict
 
@@ -10,17 +5,29 @@ import pretty_midi
 import tempfile
 
 
+INS_NAMES = ["p1", "p2", "tr", "no"]
+
+
+def load_data(infile):
+    with open(infile, "r") as f:
+        data = f.read()
+    data = data.split("\n")
+    return data
+
+
 def midi_to_event(midi):
+    """
+    Original author: Chris Donahue
+    Source: https://github.com/chrisdonahue/LakhNES/blob/master/data/tx1_midi.py
+    """
     pretty_midi.pretty_midi.MAX_TICK = 1e16
 
-    # Load MIDI file
     with tempfile.NamedTemporaryFile("wb") as mf:
         mf.write(midi)
         mf.seek(0)
         midi = pretty_midi.PrettyMIDI(mf.name)
 
-    ins_names = ["p1", "p2", "tr", "no"]
-    instruments = sorted(midi.instruments, key=lambda x: ins_names.index(x.name))
+    instruments = sorted(midi.instruments, key=lambda x: INS_NAMES.index(x.name))
     samp_to_events = defaultdict(list)
     for ins in instruments:
         instag = ins.name.upper()
@@ -85,6 +92,10 @@ def convert_midi_file(infile, outdir):
 
 
 def event_to_midi(tx1):
+    """
+    Original author: Chris Donahue
+    Source: https://github.com/chrisdonahue/LakhNES/blob/master/data/tx1_midi.py
+    """
     import pretty_midi
 
     tx1 = tx1.strip().splitlines()
@@ -143,7 +154,7 @@ def event_to_midi(tx1):
 
     # Deactivating this for generated files
     # for name, pitch in name_to_pitch.items():
-    #  assert pitch is None
+    #   assert pitch is None
 
     # Create MIDI and add instruments
     midi = pretty_midi.PrettyMIDI(initial_tempo=120, resolution=22050)
