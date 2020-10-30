@@ -3,4 +3,5 @@
 .vscode/
 .ipynb_checkpoints/
 __pycache__/
-data/
+data/nesmdb_midi/
+data/nesmdb_event/
