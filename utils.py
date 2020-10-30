@@ -96,9 +96,7 @@ def event_to_midi(tx1):
     Original author: Chris Donahue
     Source: https://github.com/chrisdonahue/LakhNES/blob/master/data/tx1_midi.py
     """
-    import pretty_midi
-
-    tx1 = tx1.strip().splitlines()
+    # tx1 = tx1.strip().splitlines()
     nsamps = sum([int(x.split("_")[1]) for x in tx1 if x[:2] == "WT"])
 
     # Create MIDI instruments
