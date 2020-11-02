@@ -1,2 +1,2 @@
 # musicgen
-Automatic NES video game music generation
+Automatic music generation with listener feedback
