@@ -3,7 +3,5 @@
 .vscode/
 .ipynb_checkpoints/
 __pycache__/
-data/nesmdb_midi/
-data/nesmdb_event/
-data/
 nesmdb/
+POP909/
