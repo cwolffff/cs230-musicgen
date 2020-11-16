@@ -5,3 +5,6 @@
 __pycache__/
 nesmdb/
 POP909/
+data/
+models/
+old/
