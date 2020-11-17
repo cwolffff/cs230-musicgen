@@ -1,2 +1,2 @@
-# musicgen
-Automatic music generation with listener feedback
+# Listener-adaptive music generation
+This repository contains code for our CS 230 final project. The most important file here is Training.ipynb, which is a Jupyter notebook containing the code for model training and evaluation. You can find audio samples from our experiments at https://soundcloud.com/sterling-alic/sets/listener-adaptive-feedback1 and https://soundcloud.com/sterling-alic/sets/listener-adaptive-feedback2.
